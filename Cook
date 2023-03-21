@@ -1,0 +1,119 @@
+yo = GetLocal ().posY//32-2
+xo = GetLocal ().posX//32-2
+
+function bahan(x , y , id)
+pkt = {}
+pkt.type = 3
+pkt.value = id
+pkt.px = x
+pkt.py = y
+pkt.x = GetLocal().posX
+pkt.y = GetLocal().posY
+SendPacketRaw(false , pkt)
+end
+
+function oven()
+xp = xo + 4
+yp = yo + 4
+for x = xo , xp do 
+for y = yo , yp do
+SendPacket(2, "action|dialog_return\ndialog_name|homeoven_edit\nx|"..x.."|\ny|"..y.."|\ncookthis|3472|\nbuttonClicked|low\n\n")
+Sleep(200)
+end
+end
+end
+
+function onion()
+xp = xo + 4
+yp = yo + 4
+for x = xo , xp do 
+for y = yo , yp do
+bahan(x , y , 4602)
+Sleep(200)
+end
+end
+end
+
+function meat()
+xp = xo + 4
+yp = yo + 4
+for x = xo , xp do 
+for y = yo , yp do
+bahan(x , y , 4588)
+Sleep(200)
+end
+end
+end
+
+function tomato()
+xp = xo + 4
+yp = yo + 4
+for x = xo , xp do 
+for y = yo , yp do
+bahan(x , y , 962)
+Sleep(200)
+end
+end
+end
+
+function pepper()
+xp = xo + 4
+yp = yo + 4
+for x = xo , xp do 
+for y = yo , yp do
+bahan(x , y , 4570)
+Sleep(200)
+end
+end
+end
+
+function salt()
+xp = xo + 4
+yp = yo + 4
+for x = xo , xp do 
+for y = yo , yp do
+bahan(x , y , 4568)
+Sleep(200)
+end
+end
+end
+
+function voila()
+xp = xo + 4
+yp = yo + 4
+for x = xo , xp do 
+for y = yo , yp do
+bahan(x , y , 18)
+Sleep(200)
+end
+end
+end
+
+while true do
+LogToConsole("`bPlease Wait For 1 Second :)")
+Sleep(1000)
+LogToConsole("`4Cooking Session : Putting Rice")
+oven()
+Sleep(33000)
+LogToConsole("`4Cooking Session : Putting Onion")
+onion()
+Sleep(200)
+LogToConsole("`4Cooking Session : Putting Meat")
+meat()
+Sleep(34000)
+LogToConsole("`4Cooking Session : Putting Tomato")
+tomato()
+Sleep(200)
+LogToConsole("`4Cooking Session : Putting Pepper")
+pepper()
+Sleep(200)
+pepper()
+Sleep(200)
+LogToConsole("`4Cooking Session : Putting Salt")
+salt()
+Sleep(11300)
+LogToConsole("`4Cooking Session : `2Finished Enjoy")
+voila()
+LogToConsole("`bPlease Wait For 1 Second :)")
+Sleep(1000)
+end
